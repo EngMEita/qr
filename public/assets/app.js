@@ -94,11 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const allowed = group.dataset.group ? group.dataset.group.trim().split(/\s+/) : [];
             const isActive = allowed.includes(current);
             group.classList.toggle("d-none", !isActive);
+            group.hidden = !isActive;
             const inputs = group.querySelectorAll("input, textarea");
             inputs.forEach(input => {
                 const shouldRequire = input.dataset.required === "true" && isActive;
                 input.required = shouldRequire;
-                input.disabled = !isActive;
                 if (!isActive) {
                     input.value = input.defaultValue;
                 }

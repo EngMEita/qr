@@ -1,5 +1,5 @@
 <?php
-$appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with Logo';
+$appTitle = 'مولد أكواد QR';
 ?>
 <!doctype html>
 <html lang="ar" dir="rtl">
@@ -7,24 +7,24 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $appTitle ?></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" integrity="sha384-GMZsXtJXlmxQn6Bs2t5ymXQZ0Fj53n2J2HXSBm1qSjYnoknQsZR2FVnGe1vzBIfp" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/superhero/bootstrap.rtl.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body class="app-body">
-<header class="app-hero text-white py-4 py-lg-5 mb-4 mb-lg-5">
+<header class="app-hero bg-primary text-white py-4 py-lg-5 mb-4 mb-lg-5 shadow-sm">
     <div class="container">
         <div class="row align-items-center g-3">
             <div class="col-lg-8">
-                <p class="text-uppercase small mb-2 opacity-75">مدعوم بالمتصفح · Browser-based</p>
+                <p class="text-uppercase small mb-2 opacity-75">أنشئ كود QR في ثوانٍ</p>
                 <h1 class="fw-bold mb-3"><?= $appTitle ?></h1>
-                <p class="lead mb-0">توليد أكواد QR احترافية لكل ما تحتاجه: روابط، اتصالات هاتفية، رسائل قصيرة وواتس أب، بريد إلكتروني، الموقع الحالي، بطاقات اتصال متوافقة مع أندرويد و iOS و ويندوز، مع إمكانية إضافة شعار في المنتصف وتحميل الكود. | Generate professional QR codes for links, calls, SMS, WhatsApp, email, geo location, and vCard, with a centered logo and easy downloads.</p>
+                <p class="lead mb-0">اختر النوع، اكتب البيانات، وحمّل الكود فورًا بصيغة PNG أو SVG.</p>
             </div>
             <div class="col-lg-4 text-lg-end">
-                <div class="badge rounded-pill px-3 py-2 shadow-sm text-wrap">
-                    تصميم بسيط بواجهات Bootstrap 5 · Clean Bootstrap 5 UI
+                <div class="badge bg-light text-dark rounded-pill px-3 py-2 shadow-sm text-wrap">
+                    تحميل سريع PNG / SVG
                 </div>
             </div>
         </div>
@@ -202,7 +202,7 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                         </div>
 
                         <div class="col-12">
-                            <div class="border rounded-3 p-3 p-lg-4 bg-light-subtle app-subcard">
+                            <div class="border rounded-3 p-3 p-lg-4 bg-body-tertiary app-subcard">
                                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
                                     <div>
                                         <div class="fw-semibold mb-1">الشعار في المنتصف | Center logo</div>
@@ -248,7 +248,7 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                         </div>
                         <span class="badge text-bg-success">مباشر</span>
                     </div>
-                    <div class="qr-wrapper p-3 p-lg-4 text-center position-relative overflow-hidden" id="qrWrapper">
+                    <div class="qr-wrapper p-3 p-lg-4 text-center position-relative overflow-hidden bg-light border rounded-4 shadow-sm" id="qrWrapper">
                         <div id="qrCanvas" class="mx-auto"></div>
                         <div class="placeholder-text text-muted" id="placeholderText">سيتم إنشاء الكود هنا | The QR will appear here</div>
                     </div>

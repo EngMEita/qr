@@ -13,8 +13,8 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="bg-light">
-<div class="bg-gradient text-white py-5 mb-4 shadow-sm">
+<body class="app-body">
+<header class="app-hero text-white py-5 mb-4">
     <div class="container">
         <div class="row align-items-center g-3">
             <div class="col-lg-8">
@@ -23,18 +23,18 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                 <p class="lead mb-0">توليد أكواد QR احترافية لكل ما تحتاجه: روابط، اتصالات هاتفية، رسائل قصيرة وواتس أب، بريد إلكتروني، الموقع الحالي، بطاقات اتصال متوافقة مع أندرويد و iOS و ويندوز، مع إمكانية إضافة شعار في المنتصف وتحميل الكود. | Generate professional QR codes for links, calls, SMS, WhatsApp, email, geo location, and vCard, with a centered logo and easy downloads.</p>
             </div>
             <div class="col-lg-4 text-lg-end">
-                <div class="badge bg-white text-primary rounded-pill px-3 py-2 shadow-sm text-wrap">
+                <div class="badge rounded-pill px-3 py-2 shadow-sm text-wrap">
                     تصميم بسيط بواجهات Bootstrap 5 · Clean Bootstrap 5 UI
                 </div>
             </div>
         </div>
     </div>
-</div>
+</header>
 
-<main class="container pb-5">
+<main class="container pb-5 app-main">
     <div class="row g-4">
-        <section class="col-lg-7">
-            <div class="card border-0 shadow-sm">
+        <section class="col-lg-7 app-panel">
+            <div class="card app-card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
                         <div>
@@ -202,7 +202,7 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                         </div>
 
                         <div class="col-12">
-                            <div class="border rounded-3 p-3 bg-light-subtle">
+                            <div class="border rounded-3 p-3 bg-light-subtle app-subcard">
                                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
                                     <div>
                                         <div class="fw-semibold mb-1">الشعار في المنتصف | Center logo</div>
@@ -238,8 +238,8 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
             </div>
         </section>
 
-        <section class="col-lg-5">
-            <div class="card border-0 shadow-sm">
+        <section class="col-lg-5 app-panel">
+            <div class="card app-card">
                 <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
                         <div>
@@ -248,7 +248,7 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                         </div>
                         <span class="badge text-bg-success">مباشر</span>
                     </div>
-                    <div class="qr-wrapper border rounded-4 p-3 text-center bg-white position-relative overflow-hidden" id="qrWrapper">
+                    <div class="qr-wrapper p-3 text-center position-relative overflow-hidden" id="qrWrapper">
                         <div id="qrCanvas" class="mx-auto"></div>
                         <div class="placeholder-text text-muted" id="placeholderText">سيتم إنشاء الكود هنا | The QR will appear here</div>
                     </div>

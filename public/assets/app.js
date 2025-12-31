@@ -185,9 +185,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 color: bgColorInput.value
             }
         });
-        qrCanvas.classList.add("has-qr");
+        qrWrapper.classList.add("has-qr");
         placeholder.textContent = "تم إنشاء الكود، يمكنك تحميله أو طباعته.";
     };
+
+    const dataInputs = form.querySelectorAll(".data-group input, .data-group textarea");
+    dataInputs.forEach((input) => {
+        input.addEventListener("input", refreshQr);
+        input.addEventListener("change", refreshQr);
+    });
 
     typeSelect.addEventListener("change", () => {
         toggleGroups();

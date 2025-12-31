@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const placeholder = document.getElementById("placeholderText");
     const form = document.getElementById("qrForm");
     const typeSelect = document.getElementById("type");
+    const dataInput = document.getElementById("data");
+    const dataLabel = document.querySelector("label[for='data']");
     const sizeInput = document.getElementById("size");
     const sizeValue = document.getElementById("sizeValue");
     const logoInput = document.getElementById("logoInput");
@@ -60,17 +62,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     qrCode.append(qrCanvas);
 
+    const dataHints = {
+        url: {
+            label: "رابط الموقع | Website URL",
+            placeholder: "https://example.com"
+        },
+        text: {
+            label: "النص | Text",
+            placeholder: "اكتب النص هنا"
+        }
+    };
+
+    const updatePrimaryDataHint = () => {
+        if (!dataInput || !dataLabel) {
+            return;
+        }
+        const hints = dataHints[typeSelect.value];
+        if (!hints) {
+            return;
+        }
+        dataLabel.textContent = hints.label;
+        dataInput.placeholder = hints.placeholder;
+        dataInput.type = typeSelect.value === "url" ? "url" : "text";
+        dataInput.inputMode = typeSelect.value === "url" ? "url" : "text";
+    };
+
     const groups = document.querySelectorAll(".data-group");
     const toggleGroups = () => {
         const current = typeSelect.value;
         groups.forEach(group => {
-            const allowed = group.dataset.group.split(" ");
-            group.classList.toggle("d-none", !allowed.includes(current));
+            const allowed = group.dataset.group ? group.dataset.group.trim().split(/\s+/) : [];
+            const isActive = allowed.includes(current);
+            group.classList.toggle("d-none", !isActive);
             const inputs = group.querySelectorAll("input, textarea");
             inputs.forEach(input => {
-                const shouldRequire = input.dataset.required === "true" && allowed.includes(current);
+                const shouldRequire = input.dataset.required === "true" && isActive;
                 input.required = shouldRequire;
-                if (group.classList.contains("d-none")) {
+                input.disabled = !isActive;
+                if (!isActive) {
                     input.value = input.defaultValue;
                 }
             });
@@ -197,6 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeSelect.addEventListener("change", () => {
         toggleGroups();
+        updatePrimaryDataHint();
         refreshQr();
     });
 
@@ -233,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
             sizeValue.textContent = `${sizeInput.value}px`;
             marginValue.textContent = `${marginInput.value}px`;
             toggleGroups();
+            updatePrimaryDataHint();
             refreshQr();
         }, 0);
     });
@@ -336,5 +367,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     toggleGroups();
+    updatePrimaryDataHint();
     refreshQr();
 });

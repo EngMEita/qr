@@ -14,7 +14,7 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body class="app-body">
-<header class="app-hero text-white py-5 mb-4">
+<header class="app-hero text-white py-4 py-lg-5 mb-4 mb-lg-5">
     <div class="container">
         <div class="row align-items-center g-3">
             <div class="col-lg-8">
@@ -31,11 +31,11 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
     </div>
 </header>
 
-<main class="container pb-5 app-main">
-    <div class="row g-4">
+<main class="container pb-5 pt-2 pt-lg-3 app-main">
+    <div class="row g-4 g-lg-5">
         <section class="col-lg-7 app-panel">
             <div class="card app-card">
-                <div class="card-body">
+                <div class="card-body p-4 p-lg-5">
                     <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
                         <div>
                             <h2 class="h5 mb-1">أدخل بيانات الكود</h2>
@@ -44,7 +44,7 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                         <span class="badge text-bg-primary rounded-pill">يدعم الشعار</span>
                     </div>
 
-                    <form id="qrForm" class="row g-3 needs-validation" novalidate>
+                    <form id="qrForm" class="row g-3 g-lg-4 needs-validation" novalidate>
                         <div class="col-12">
                             <label class="form-label fw-semibold" for="type">نوع المحتوى</label>
                             <select class="form-select" id="type" name="type" required>
@@ -60,8 +60,8 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                         </div>
 
                         <div class="col-12 data-group" data-group="url text">
-                            <label class="form-label" for="data">المحتوى أو الرابط | Content / URL</label>
-                            <input type="text" class="form-control" id="data" name="data" placeholder="https://example.com أو نص" required data-required="true">
+                            <label class="form-label" for="data">رابط الموقع | Website URL</label>
+                            <input type="text" class="form-control" id="data" name="data" placeholder="https://example.com" required data-required="true">
                         </div>
 
                         <div class="col-md-6 data-group d-none" data-group="phone sms whatsapp">
@@ -158,11 +158,11 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="color">لون النقاط | Dots color</label>
-                                    <input type="color" class="form-control form-control-color" id="color" name="color" value="#0d6efd" title="اختر اللون">
+                                    <input type="color" class="form-control form-control-color w-100" id="color" name="color" value="#0d6efd" title="اختر اللون">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="bgColor">لون الخلفية | Background</label>
-                                    <input type="color" class="form-control form-control-color" id="bgColor" name="bgColor" value="#ffffff" title="اختر الخلفية">
+                                    <input type="color" class="form-control form-control-color w-100" id="bgColor" name="bgColor" value="#ffffff" title="اختر الخلفية">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="margin">الحافة الصامتة | Quiet zone</label>
@@ -202,7 +202,7 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                         </div>
 
                         <div class="col-12">
-                            <div class="border rounded-3 p-3 bg-light-subtle app-subcard">
+                            <div class="border rounded-3 p-3 p-lg-4 bg-light-subtle app-subcard">
                                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
                                     <div>
                                         <div class="fw-semibold mb-1">الشعار في المنتصف | Center logo</div>
@@ -228,7 +228,7 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                             </div>
                         </div>
 
-                        <div class="col-12 d-flex flex-wrap gap-2">
+                        <div class="col-12 d-flex flex-wrap gap-2 mt-2">
                             <button class="btn btn-primary" type="submit">توليد الكود | Generate</button>
                             <button class="btn btn-outline-secondary" type="button" id="copyPayload">نسخ البيانات | Copy payload</button>
                             <button class="btn btn-outline-danger" type="reset">تفريغ الحقول | Reset</button>
@@ -240,7 +240,7 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
 
         <section class="col-lg-5 app-panel">
             <div class="card app-card">
-                <div class="card-body">
+                <div class="card-body p-4 p-lg-5">
                     <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
                         <div>
                             <h2 class="h5 mb-1">المعاينة والتحميل | Preview & download</h2>
@@ -248,15 +248,15 @@ $appTitle = 'مولد أكواد QR شامل مع شعار | QR Generator with L
                         </div>
                         <span class="badge text-bg-success">مباشر</span>
                     </div>
-                    <div class="qr-wrapper p-3 text-center position-relative overflow-hidden" id="qrWrapper">
+                    <div class="qr-wrapper p-3 p-lg-4 text-center position-relative overflow-hidden" id="qrWrapper">
                         <div id="qrCanvas" class="mx-auto"></div>
                         <div class="placeholder-text text-muted" id="placeholderText">سيتم إنشاء الكود هنا | The QR will appear here</div>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 mt-3">
+                    <div class="d-flex flex-wrap gap-2 mt-4">
                         <button class="btn btn-outline-primary" id="downloadPng" type="button">تحميل PNG (افتراضي) | Download PNG</button>
                         <button class="btn btn-outline-primary" id="downloadSvg" type="button">تحميل SVG | Download SVG</button>
                     </div>
-                    <div class="alert alert-info mt-3 mb-0 small">
+                    <div class="alert alert-info mt-4 mb-0 small">
                         <div class="fw-semibold">تلميحات سريعة | Tips:</div>
                         <ul class="mb-0 ps-3">
                             <li>لإجراء اتصال هاتفي استخدم نوع "إجراء اتصال هاتفي" مع رقم دولي. | Use international format for phone calls.</li>
